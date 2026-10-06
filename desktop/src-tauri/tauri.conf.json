@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Ruta CAE",
+  "version": "1.0.0",
+  "identifier": "app.rutacae.desktop",
+  "build": {
+    "frontendDist": "../../app"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Ruta CAE",
+        "width": 1280,
+        "height": 860,
+        "minWidth": 380,
+        "minHeight": 560,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Education",
+    "shortDescription": "Cambridge C1 Advanced study platform",
+    "longDescription": "Practice for every CAE paper, exam-format listening, writing and speaking marking, a CEFR media lab, a speaking tutor and spaced-repetition vocabulary.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

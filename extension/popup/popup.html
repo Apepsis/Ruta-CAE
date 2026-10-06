@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="popup.css"></head><body>
+<header><b class="brand"><i>CAE</i>Ruta CAE</b><span id="ver"></span></header>
+<section id="rate"></section>
+<section>
+  <div class="row between"><h2>Waiting for the app</h2><span id="cnt" class="pill">0</span></div>
+  <ul id="words"></ul>
+  <div class="row"><button id="open" class="primary">Open Ruta CAE</button></div>
+  <p id="appurl" class="muted"></p>
+</section>
+<section>
+  <h2>Settings</h2>
+  <label><input type="checkbox" id="s-captions"> Colour hard words in YouTube captions</label>
+  <label><input type="checkbox" id="s-thumbs"> Show level badges on thumbnails</label>
+  <label>Highlight from <select id="s-min"><option>B2</option><option selected>C1</option><option>C2</option></select></label>
+  <label>App address <input type="url" id="s-url" placeholder="https://you.github.io/ruta-cae/"></label>
+  <p class="muted">Levels are frequency-based estimates for choosing material. Words wait here until the app is open, then move into Captured words.</p>
+</section>
+<script src="popup.js"></script>
+</body></html>

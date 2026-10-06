@@ -1,0 +1,22 @@
+{
+  "name": "ruta-cae",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cambridge C1 Advanced (CAE) study platform: Ruta C2 + FlexiLingo-style media lab, speaking tutor, CEFR video extension and desktop app.",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "dev": "npx --yes http-server app -p 8080 -c-1",
+    "pack": "node tools/build-pack.cjs",
+    "sync:ext": "node tools/sync-extension.cjs",
+    "zip:ext": "node tools/sync-extension.cjs && cd extension && zip -qr ../ruta-cae-extension.zip . -x '*.DS_Store'",
+    "cefr:data": "python3 tools/build-cefr-data.py",
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build",
+    "test": "node tests/run.cjs"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.0",
+    "playwright": "^1.55.0"
+  }
+}

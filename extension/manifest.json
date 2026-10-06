@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Ruta CAE — YouTube C1/C2 classifier",
+  "short_name": "Ruta CAE",
+  "version": "1.0.0",
+  "description": "Rates YouTube videos as B2 / C1 / C2 for the Cambridge C1 Advanced, colours C1–C2 words in captions, and saves words to your Ruta CAE app.",
+  "icons": {"16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png"},
+  "action": {"default_popup": "popup/popup.html", "default_title": "Ruta CAE"},
+  "background": {"service_worker": "background.js"},
+  "permissions": ["storage", "contextMenus", "scripting", "activeTab"],
+  "host_permissions": ["https://www.youtube.com/*", "https://m.youtube.com/*", "https://api.dictionaryapi.dev/*"],
+  "content_scripts": [
+    {"matches": ["https://www.youtube.com/*"], "js": ["content/page-hook.js"], "run_at": "document_start", "world": "MAIN"},
+    {"matches": ["https://www.youtube.com/*"], "js": ["lib/cefr-words.js", "lib/cefr.js", "content/yt.js"], "css": ["content/yt.css"], "run_at": "document_idle"},
+    {"matches": ["https://*.github.io/*", "https://*.pages.dev/*", "https://*.netlify.app/*", "https://*.vercel.app/*", "http://localhost/*", "http://127.0.0.1/*", "http://tauri.localhost/*"], "js": ["content/app-bridge.js"], "run_at": "document_idle"}
+  ]
+}

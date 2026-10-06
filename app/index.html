@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="ruta-cae-app" content="1">
+<meta name="theme-color" content="#12151C">
+<meta name="description" content="Ruta CAE — Cambridge C1 Advanced study platform: practice, listening, writing marking, CEFR video lab, speaking tutor, SRS vocabulary.">
+<title>Ruta CAE</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&family=Literata:opsz,wght@7..72,400;7..72,600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="flexi/flexi.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand"><i>CAE</i>Ruta CAE</div>
+  <button class="pill" id="countdown" title="Set your exam date"></button>
+  <nav class="tabs" aria-label="Sections">
+    <button data-tab="today" aria-current="page">Today</button>
+    <button data-tab="practice">Practice</button>
+    <button data-tab="listening">Listening</button>
+    <button data-tab="media">Media Lab</button>
+    <button data-tab="write">Writing &amp; Speaking</button>
+    <button data-tab="tutor">Tutor</button>
+    <button data-tab="cards">Vocabulary</button>
+    <button data-tab="learn">Learn</button>
+    <button data-tab="resources">Resources</button>
+    <button data-tab="progress">Progress</button>
+  </nav>
+  <button id="gear" class="gear" aria-label="Settings" title="Settings: AI, data, content pack">⚙</button>
+</div></header>
+<main class="wrap" id="app"><div class="loading">Loading your study plan…</div></main>
+<div class="toast" id="toast" hidden></div>
+<div id="overlay"></div>
+<div id="overlay2"></div>
+<!-- runtime.js replaces the claude.ai runtime (AI, database, files) and then loads the app scripts in order -->
+<script src="runtime.js"></script>
+</body>
+</html>
