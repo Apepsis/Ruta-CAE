@@ -67,11 +67,13 @@ openSettings = function (section) {
     </section>
     <section data-s="data" class="stack">
       <p class="small muted" style="margin:0">Everything (attempts, cards, writing, imported sets, captured words) lives on this device. Export a backup to move it to another browser, the desktop app or your phone, and import it there. Imports merge, they never delete.</p>
+      <p class="small muted" style="margin:0">Coming from <b>Ruta C2 on claude.ai</b>? There, click the exam countdown → <i>Export my progress (.json)</i>, then import that file here. <a href="https://claude.ai/artifact/KFEAm6NUy6ZYK7j2R4Zz7B" target="_blank" rel="noopener">Open Ruta C2 ↗</a></p>
       <div class="row"><button class="btn primary" id="dExp">Export backup (.json)</button><label class="btn" style="cursor:pointer">Import backup<input type="file" id="dImp" accept=".json,application/json" hidden></label><span class="small" id="dMsg"></span></div>
       <p class="small muted" style="margin:0">Stored now: <span class="num">${Store.attempts.length}</span> answers · <span class="num">${Object.keys(Store.cards).length}</span> cards · <span class="num">${Store.works.length}</span> marked tasks · <span class="num">${Store.sets.length}</span> imported sets · <span class="num">${(window.CW ? CW.all().length : 0)}</span> captured words.</p>
     </section>
     <section data-s="pack" class="stack">
       <p class="small muted" style="margin:0">A content pack is a .zip with <code>pack.json</code> (listening parts, transcripts, your book sets, word lists and progress) plus the audio. It is for your own licensed material and never leaves this device. Build one with <code>npm run pack</code> (see docs/CONTENT-PACK.md).</p>
+      <p class="small muted" style="margin:0">Import the .zip as it is, without unzipping it (it must contain <code>pack.json</code> and the <code>audio/</code> folder). The Listening tab lights up as soon as it is in.</p>
       <p style="margin:0">${window.PACK_INFO ? `Installed: <b>${esc(PACK_INFO.title)}</b> · ${PACK_INFO.parts} listening parts` : 'No pack installed.'}</p>
       <div class="row"><label class="btn primary" style="cursor:pointer">Import pack (.zip)<input type="file" id="pImp" accept=".zip,application/zip" hidden></label>${window.PACK_INFO ? '<button class="btn" id="pDel">Remove pack</button>' : ''}<span class="small" id="pMsg"></span></div>
     </section>

@@ -9,6 +9,8 @@ Ruta C2 + los servicios de aprendizaje de FlexiLingo Desk, reconstruidos solo pa
 
 Web (PWA instalable) · App de escritorio (Windows / macOS / Linux) · Extensión de Chrome para YouTube
 
+**[Abrir la app](https://apepsis.github.io/Ruta-CAE/)** · [Ruta C2 en claude.ai](https://claude.ai/artifact/KFEAm6NUy6ZYK7j2R4Zz7B) · [Releases (escritorio + extensión)](https://github.com/Apepsis/Ruta-CAE/releases)
+
 </div>
 
 ---
@@ -41,8 +43,8 @@ Todo lo que no servía para el CAE se quitó: los otros 9 idiomas (es, fr, de, z
 ## Empezar en 2 minutos
 
 ```bash
-git clone https://github.com/<tu-usuario>/ruta-cae
-cd ruta-cae
+git clone https://github.com/Apepsis/Ruta-CAE
+cd Ruta-CAE
 npm run dev          # abre http://localhost:8080
 ```
 
@@ -67,6 +69,12 @@ npm run pack         # → private-pack/ruta-cae-pack.zip
 
 Luego en la app: ⚙ Settings → Content pack → Import. `private-pack/` está en `.gitignore`.
 
+Si ya tienes el zip del paquete (p. ej. `ruta-cae-pack-PRIVADO.zip`), impórtalo tal cual, **sin descomprimir**: debe contener `pack.json` y la carpeta `audio/`.
+
+### 2b · Pasar tu progreso desde Ruta C2 (claude.ai)
+
+En [Ruta C2](https://claude.ai/artifact/KFEAm6NUy6ZYK7j2R4Zz7B): clic en la cuenta atrás del examen (arriba) → **Export my progress (.json)**. Luego en Ruta CAE: ⚙ Settings → Backup & sync → **Import backup**. Se pasan respuestas, flashcards, writings corregidos, preguntas generadas, sets importados, tus listas de vocabulario de los libros y los model answers.
+
 ### 3 · Copias de seguridad (⚙ Settings → Backup & sync)
 
 Todo vive en tu dispositivo (localStorage + IndexedDB). Exporta un `.json` para pasar tu progreso entre navegador, escritorio y móvil; importar **fusiona**, nunca borra.
@@ -77,7 +85,7 @@ Todo vive en tu dispositivo (localStorage + IndexedDB). Exporta un `.json` para 
 
 1. Sube la repo a GitHub.
 2. Settings → Pages → Source: **GitHub Actions**.
-3. Cada push a `main` publica `app/` en `https://<tu-usuario>.github.io/ruta-cae/`.
+3. Cada push a `main` publica `app/` en **https://apepsis.github.io/Ruta-CAE/**.
 
 En el móvil: abre esa dirección → “Añadir a pantalla de inicio”.
 

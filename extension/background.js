@@ -4,11 +4,13 @@
    a selected word (with its sentence) from any website. */
 const get = k => chrome.storage.local.get(k);
 const set = o => chrome.storage.local.set(o);
+const DEFAULT_APP_URL = 'https://apepsis.github.io/Ruta-CAE/'; // replaced by whichever Ruta CAE you open
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({id: 'rcae-save', title: 'Save “%s” to Ruta CAE', contexts: ['selection']});
   get('settings').then(d => { if (!d.settings) set({settings: {captions: true, thumbs: true, minLevel: 'C1'}}); });
+  get('appUrl').then(d => { if (!d.appUrl) set({appUrl: DEFAULT_APP_URL}); });
 });
 async function addWords(items) {
   const {words = [], known = []} = await get(['words', 'known']);
