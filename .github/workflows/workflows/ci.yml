@@ -1,0 +1,14 @@
+# Checks every push: JS syntax, extension manifest, and a headless smoke test of the app.
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20}
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tools/sync-extension.cjs --check
+      - run: npm test
